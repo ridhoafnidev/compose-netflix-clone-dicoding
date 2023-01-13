@@ -13,6 +13,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgs
 import androidx.navigation.navArgument
 import com.ridhoafni.submissioncomposedicoding.ui.screens.HomeScreen
+import com.ridhoafni.submissioncomposedicoding.ui.screens.ProfileScreen
 import com.ridhoafni.submissioncomposedicoding.ui.screens.detail.MovieDetailScreen
 import com.ridhoafni.submissioncomposedicoding.ui.theme.NetflixCloneAppDicodingAppsTheme
 import com.ridhoafni.submissioncomposedicoding.utils.Routers
@@ -51,6 +52,12 @@ class MainActivity : ComponentActivity() {
             ) { navBackStackEntry ->
                 val movieId = navBackStackEntry.arguments?.getString("movieId")
                 MovieDetailScreen(movieId.orEmpty(), navController)
+            }
+
+            composable(
+                route = Routers.PROFILE
+            ) {
+                ProfileScreen(navController)
             }
         }
     }
